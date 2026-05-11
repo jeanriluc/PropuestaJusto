@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta Estratégica - Justo. Estudio Notarial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        yellow: {
+                            200: '#eaddcf',
+                            400: '#c5ab8d',
+                            500: '#d2bba0',
+                        },
+                        slate: {
+                            800: '#292524',
+                            900: '#1c1917',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --primary: #1c1917;
+            --accent: #d2bba0;
+            --accent-light: #eaddcf;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary);
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 {
+            transition-delay: 100ms;
+        }
+
+        .delay-200 {
+            transition-delay: 200ms;
+        }
+
+        .delay-300 {
+            transition-delay: 300ms;
+        }
+
+        /* Glassmorphism */
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Glowing effects */
+        .glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(210, 187, 160, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, var(--accent-light), var(--accent));
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+        /* Print optimization */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+            }
+
+            .glass {
+                background: white !important;
+                border: 1px solid #e2e8f0 !important;
+                color: black !important;
+                box-shadow: none !important;
+            }
+
+            .text-gradient {
+                -webkit-text-fill-color: black !important;
+            }
+
+            h1,
+            h2,
+            h3 {
+                color: #0f172a !important;
+            }
+
+            .text-gray-400,
+            .text-gray-300,
+            .text-slate-300 {
+                color: #334155 !important;
+            }
+
+            .page-break {
+                page-break-before: always;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .glow {
+                display: none !important;
+            }
+
+            .fade-up {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-yellow-500 selection:text-slate-900">
+
+
+
+    <main class="max-w-4xl mx-auto px-6 relative">
+
+        <!-- Background Glows -->
+        <div class="glow top-[-100px] left-[-100px]"></div>
+        <div class="glow bottom-[20%] right-[-100px]"></div>
+
+        <!-- PORTADA -->
+        <section class="min-h-screen flex flex-col justify-center items-center text-center relative z-10 page-break">
+            <div class="fade-up">
+                <p class="uppercase tracking-[0.4em] text-yellow-500 text-xs font-bold mb-6">Propuesta de Servicios
+                    Integrales</p>
+                <h1 class="text-6xl md:text-7xl font-bold leading-tight mb-8">Estrategia Digital<br /><span
+                        class="text-gradient italic">Premium</span></h1>
+
+                <div class="w-24 h-[2px] bg-yellow-500 mx-auto my-10 opacity-50"></div>
+
+                <!-- Logo -->
+                <div class="flex items-center justify-center mt-4 mb-4">
+                    <img src="https://i.imgur.com/lNp138j.png" alt="Justo. Estudio Notarial"
+                        class="w-64 md:w-80 h-auto">
+                </div>
+                <div class="mt-16 flex items-center justify-center space-x-2 text-slate-400 text-sm">
+                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                    <span>Mayo 2026</span>
+                </div>
+            </div>
+
+            <a href="#resumen"
+                class="absolute bottom-10 animate-bounce text-slate-500 hover:text-yellow-500 transition-colors no-print">
+                <i data-lucide="chevron-down" class="w-8 h-8"></i>
+            </a>
+        </section>
+
+        <!-- 1. RESUMEN EJECUTIVO -->
+        <section id="resumen" class="py-24 page-break relative z-10 border-t border-slate-800">
+            <div class="fade-up">
+                <div class="flex items-center space-x-4 mb-8">
+                    <span class="text-yellow-500 font-serif text-5xl opacity-50">01</span>
+                    <h2 class="text-3xl font-bold">Resumen Ejecutivo</h2>
+                </div>
+
+                <div class="glass p-8 rounded-2xl">
+                    <p class="text-slate-300 leading-relaxed text-lg mb-6">
+                        El entorno notarial y legal actual requiere de un pilar fundamental para la captación de
+                        clientes: <strong class="text-white">la confianza</strong>. El objetivo de esta propuesta es
+                        posicionar al Estudio como un referente moderno, seguro y accesible en servicios notariales.
+                    </p>
+                    <p class="text-slate-300 leading-relaxed text-lg">
+                        Nos enfocaremos en una estrategia de 360 grados que abarque redes sociales, publicidad orientada
+                        a la conversión y una sólida presencia web, con especial énfasis en nichos de alta rentabilidad
+                        como la <span class="text-yellow-400 font-medium">compraventa automotriz</span> y las <span
+                            class="text-yellow-400 font-medium">gestiones de ciudadanía</span>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. ESTRATEGIA DE CONTENIDOS -->
+        <section class="py-24 page-break relative z-10 border-t border-slate-800">
+            <div class="fade-up">
+                <div class="flex items-center space-x-4 mb-12">
+                    <span class="text-yellow-500 font-serif text-5xl opacity-50">02</span>
+                    <h2 class="text-3xl font-bold">Estrategia de Contenidos</h2>
+                </div>
+                <p class="text-slate-400 mb-10 text-lg">Desarrollaremos un plan a 3 meses enfocado en educar a la
+                    audiencia, resolver dudas y humanizar la marca en Instagram y Facebook.</p>
+
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                    <div class="glass p-8 rounded-2xl hover:border-yellow-500/50 transition-colors fade-up delay-100">
+                        <i data-lucide="car" class="w-8 h-8 text-yellow-500 mb-4"></i>
+                        <h4 class="font-bold text-white mb-3 font-serif text-xl">Trámites Automotores</h4>
+                        <p class="text-slate-400">Contenido preventivo sobre la importancia del escribano, revisión de
+                            títulos y seguridad jurídica al comprar vehículos.</p>
+                    </div>
+                    <div class="glass p-8 rounded-2xl hover:border-yellow-500/50 transition-colors fade-up delay-200">
+                        <i data-lucide="globe" class="w-8 h-8 text-yellow-500 mb-4"></i>
+                        <h4 class="font-bold text-white mb-3 font-serif text-xl">Ciudadanías</h4>
+                        <p class="text-slate-400">Guías de trámites, apostillados y casos de éxito, simplificando
+                            procesos burocráticos para el cliente.</p>
+                    </div>
+                    <div class="glass p-8 rounded-2xl hover:border-yellow-500/50 transition-colors fade-up delay-300">
+                        <i data-lucide="briefcase" class="w-8 h-8 text-yellow-500 mb-4"></i>
+                        <h4 class="font-bold text-white mb-3 font-serif text-xl">Gestiones Generales</h4>
+                        <p class="text-slate-400">Servicios notariales extra: certificados, poderes, testamentos y
+                            asesoramiento, abarcando todas las necesidades.</p>
+                    </div>
+                </div>
+
+                <div class="glass p-8 rounded-2xl border-l-4 border-l-yellow-500 fade-up delay-300">
+                    <h3 class="text-xl font-bold text-white mb-6 font-serif">Entregables Mensuales</h3>
+                    <ul class="space-y-5 text-slate-300">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-yellow-500 mr-3 flex-shrink-0"></i>
+                            <span><strong class="text-white">Diseño de Estrategia</strong> y Calendario Mensual.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="video" class="w-6 h-6 text-yellow-500 mr-3 flex-shrink-0"></i>
+                            <span><strong class="text-white">8 Reels (2 por semana):</strong> Guiones provistos, edición
+                                profesional con subtítulos dinámicos y técnicas de retención de audiencia.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="images" class="w-6 h-6 text-yellow-500 mr-3 flex-shrink-0"></i>
+                            <span><strong class="text-white">8 Carruseles (2 por semana):</strong> Aportando el doble de
+                                valor educativo mediante diseño gráfico adaptado a la identidad visual del
+                                estudio.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. ADS Y CAPTACIÓN -->
+        <section class="py-24 page-break relative z-10 border-t border-slate-800">
+            <div class="fade-up">
+                <div class="flex items-center space-x-4 mb-12">
+                    <span class="text-yellow-500 font-serif text-5xl opacity-50">03</span>
+                    <h2 class="text-3xl font-bold">Publicidad Paga & Captación</h2>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="glass p-6 rounded-2xl flex items-center fade-up delay-100">
+                        <div class="bg-slate-800 p-4 rounded-full mr-6 border border-slate-700">
+                            <i data-lucide="search" class="w-6 h-6 text-yellow-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-xl">Google Ads (Búsqueda)</h4>
+                            <p class="text-slate-400 mt-1">Interceptar usuarios que buscan activamente servicios (Ej:
+                                "escribano trámites ciudadanía").</p>
+                        </div>
+                    </div>
+
+                    <div class="glass p-6 rounded-2xl flex items-center fade-up delay-200">
+                        <div class="bg-slate-800 p-4 rounded-full mr-6 border border-slate-700">
+                            <i data-lucide="target" class="w-6 h-6 text-yellow-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-xl">Meta Ads (Instagram)</h4>
+                            <p class="text-slate-400 mt-1">Campañas de Generación de Mensajes utilizando el contenido
+                                orgánico de mejor rendimiento.</p>
+                        </div>
+                    </div>
+
+                    <div class="glass p-6 rounded-2xl flex items-center fade-up delay-300">
+                        <div class="bg-slate-800 p-4 rounded-full mr-6 border border-slate-700">
+                            <i data-lucide="bot" class="w-6 h-6 text-yellow-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-xl">Embudos y Automatización Inbox</h4>
+                            <p class="text-slate-400 mt-1">Respuestas automáticas en Instagram y WhatsApp para
+                                pre-calificar a los prospectos antes de derivarlos a la agenda formal.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. DESARROLLO WEB -->
+        <section class="py-24 page-break relative z-10 border-t border-slate-800">
+            <div class="fade-up">
+                <div class="flex items-center space-x-4 mb-12">
+                    <span class="text-yellow-500 font-serif text-5xl opacity-50">04</span>
+                    <h2 class="text-3xl font-bold">Plataforma Web</h2>
+                </div>
+
+                <div class="glass p-10 rounded-3xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-500 opacity-10 rounded-bl-full"></div>
+                    <p class="text-slate-300 leading-relaxed text-lg mb-8 relative z-10">
+                        Desarrollo de una <strong class="text-white">Landing Page Institucional (One-Page)</strong>
+                        premium. Funcionará como la carta de presentación del estudio y el centro principal de
+                        conversión, optimizada para no requerir administración técnica por parte del cliente.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-y-4 gap-x-8 text-slate-300 relative z-10">
+                        <div class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-yellow-500 mr-2"></i>
+                            Diseño Premium Responsive</div>
+                        <div class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-yellow-500 mr-2"></i>
+                            Sección Institucional</div>
+                        <div class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-yellow-500 mr-2"></i>
+                            Optimización SEO Local</div>
+                        <div class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-yellow-500 mr-2"></i>
+                            Catálogo de Servicios</div>
+                        <div class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-yellow-500 mr-2"></i>
+                            Botón Flotante WhatsApp</div>
+                        <div class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-yellow-500 mr-2"></i>
+                            Formulario de Contacto</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. INVERSIÓN -->
+        <section class="py-24 page-break relative z-10 border-t border-slate-800 mb-20">
+            <div class="fade-up">
+                <div class="flex items-center space-x-4 mb-12">
+                    <span class="text-yellow-500 font-serif text-5xl opacity-50">05</span>
+                    <h2 class="text-3xl font-bold">Inversión</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Retainer Mensual -->
+                    <div
+                        class="bg-gradient-to-br from-yellow-500/10 to-transparent border border-yellow-500/30 rounded-3xl p-8 flex flex-col fade-up delay-100 hover:shadow-[0_0_30px_rgba(210,187,160,0.15)] transition-shadow duration-500">
+                        <h3 class="text-xl font-serif text-white mb-6 border-b border-slate-700 pb-4">A. Servicios
+                            Mensuales <span class="text-sm text-slate-400 font-sans block mt-1">(Servicio a 3
+                                meses)</span></h3>
+
+                        <div class="space-y-6 flex-grow">
+                            <div>
+                                <h4 class="font-bold text-white">Content & Redes Sociales</h4>
+                                <p class="text-sm text-slate-400 mb-1">Estrategia, guiones, 8 Reels, 8 Carruseles,
+                                    gestión.</p>
+                                <p class="text-yellow-500 font-semibold text-lg">USD $350</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Gestión de Ads (Trafficker)</h4>
+                                <p class="text-sm text-slate-400 mb-1">Campañas en Google & Meta Ads.</p>
+                                <p class="text-yellow-500 font-semibold text-lg">USD $200</p>
+                            </div>
+                            <div
+                                class="p-4 bg-yellow-500/10 rounded-xl border border-yellow-500/30 mt-4 relative overflow-hidden group">
+                                <div
+                                    class="absolute inset-0 bg-yellow-500/20 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out">
+                                </div>
+                                <div class="flex justify-between items-center mb-1 relative z-10">
+                                    <h4 class="font-bold text-white">Automatización Inbox</h4>
+                                    <span
+                                        class="bg-green-500/20 text-green-400 text-[10px] font-bold px-2 py-1 rounded tracking-wider ml-2 uppercase">Bonificado</span>
+                                </div>
+                                <p class="text-sm text-slate-400 mb-2 relative z-10">Configuración de bot de filtrado
+                                    para Instagram, WhatsApp y Facebook.</p>
+                                <p class="text-green-400 font-semibold relative z-10"><span
+                                        class="line-through text-slate-500 text-sm mr-2 font-normal">USD $150</span>
+                                    GRATIS <span class="text-xs text-slate-400 font-normal">(Incluido en el plan)</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 pt-6 border-t border-yellow-500/20">
+                            <p class="text-slate-400 text-sm mb-1">Honorarios Mensuales</p>
+                            <p class="text-4xl font-bold text-yellow-500 mb-4">USD $550</p>
+
+                            <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-700/50 relative overflow-hidden mb-5">
+                                <p class="text-xs text-slate-400 leading-relaxed relative z-10">
+                                    <strong class="text-yellow-500">Ciclo inicial de 3 meses.</strong> Finalizado este periodo, se reevalúan los resultados obtenidos para continuar con la gestión, aplicando un ajuste del 15% sobre los honorarios para el siguiente ciclo. Este modelo de crecimiento escalonado se mantiene hasta alcanzar un tope máximo a definir en conjunto.
+                                </p>
+                            </div>
+
+                            <div class="mt-5 p-4 bg-slate-800/50 border border-slate-700 rounded-lg relative">
+                                <div class="absolute left-0 top-0 bottom-0 w-1 bg-yellow-500 rounded-l-lg"></div>
+                                <h5 class="text-white font-bold text-sm mb-1">ℹ️ Presupuesto Publicitario (Ads)</h5>
+                                <p class="text-slate-400 text-xs leading-relaxed">
+                                    Los honorarios de gestión no incluyen el dinero que se le paga a Meta o Google por
+                                    los anuncios. Sugerimos iniciar con una inversión de <strong>USD $100 a $150
+                                        mensuales</strong> e ir escalándola a medida que las campañas generen clientes
+                                    rentables para el estudio.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Setup Único -->
+                    <div
+                        class="bg-gradient-to-br from-yellow-500/10 to-transparent border border-yellow-500/30 rounded-3xl p-6 md:p-8 flex flex-col fade-up delay-200 hover:shadow-[0_0_30px_rgba(210,187,160,0.15)] transition-shadow duration-500 h-fit">
+                        <h3 class="text-xl font-serif text-white mb-4 border-b border-yellow-500/20 pb-4">B. Desarrollo Web <span class="text-sm text-slate-400 font-sans block mt-1">(Pago Único)</span></h3>
+
+                        <div>
+                            <h4 class="font-bold text-white text-lg mb-1">Landing Page Premium</h4>
+                            <p class="text-sm text-slate-300 leading-relaxed">Diseño One-Page moderno, optimizado para conversión con enlaces a WhatsApp y catálogo de servicios.</p>
+                        </div>
+
+                        <div class="mt-6 pt-5 border-t border-yellow-500/20">
+                            <p class="text-slate-400 text-sm mb-1">Setup Inicial</p>
+                            <p class="text-4xl font-bold text-yellow-500">USD $300</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Inicializar iconos
+        lucide.createIcons();
+
+        // Animaciones al hacer scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // Interactive mouse glow effect
+        const cursorGlow = document.createElement('div');
+        cursorGlow.className = 'no-print';
+        cursorGlow.style.cssText = `
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(210,187,160,0.08) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        `;
+        document.body.appendChild(cursorGlow);
+
+        document.addEventListener('mousemove', (e) => {
+            cursorGlow.style.left = e.clientX + 'px';
+            cursorGlow.style.top = e.clientY + 'px';
+        });
+
+        document.addEventListener('mouseenter', () => cursorGlow.style.opacity = '1');
+        document.addEventListener('mouseleave', () => cursorGlow.style.opacity = '0');
+        cursorGlow.style.opacity = '1';
+    </script>
+</body>
+
+</html>
